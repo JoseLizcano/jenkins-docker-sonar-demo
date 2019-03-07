@@ -14,13 +14,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "maven install -Dmaven.test.skip=true"
+                sh "mvn install -Dmaven.test.skip=true"
             }
         }
         stage('Scann Code') {
             steps {
                 script {
-                  sh "maven sonar:sonar -Dsonar.host.url=http://localhost:9000 -DskipTests=true -Dsonar.projectKey=${APPLICATION_NAME} -Dsonar.projectName=${APPLICATION_NAME}"
+                  sh "mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -DskipTests=true -Dsonar.projectKey=${APPLICATION_NAME} -Dsonar.projectName=${APPLICATION_NAME}"
                 }
             }
         }
