@@ -20,7 +20,7 @@ pipeline {
         stage('Scann Code') {
             steps {
                 script {
-                  sh "mvn sonar:sonar -Dsonar.host.url=http://0.0.0.0:9000 -DskipTests=true -Dsonar.projectKey=${APPLICATION_NAME} -Dsonar.projectName=${APPLICATION_NAME}"
+                  sh "mvn sonar:sonar -Dsonar.host.url=http://172.26.0.4:9000 -DskipTests=true -Dsonar.projectKey=${APPLICATION_NAME} -Dsonar.projectName=${APPLICATION_NAME}"
                 }
             }
         }
